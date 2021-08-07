@@ -1,0 +1,1 @@
+enum SignStateType { signin, signup }
