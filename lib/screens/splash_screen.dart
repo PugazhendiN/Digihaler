@@ -1,4 +1,4 @@
-import 'dart:async';
+// import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:inhaler_mobile/screens/branding_screen.dart';
@@ -30,7 +30,7 @@ class _SplashScreenState extends State<SplashScreen> {
             color: Theme.of(context).primaryColor,
             child: Center(
               child: CircularProgressIndicator(
-                  backgroundColor: Theme.of(context).accentColor,
+                  backgroundColor: Colors.red,
                   valueColor: new AlwaysStoppedAnimation<Color>(Colors.white)),
             )),
       ),

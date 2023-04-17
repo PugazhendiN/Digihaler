@@ -6,7 +6,7 @@ import 'package:inhaler_mobile/custom_colors.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:inhaler_mobile/enums/sign_state_type.dart';
 import 'package:inhaler_mobile/screens/home_bucket.dart';
-import 'package:inhaler_mobile/screens/home_screen.dart';
+// import 'package:inhaler_mobile/screens/home_screen.dart';
 
 class SignScreen extends StatefulWidget {
   const SignScreen() : super();
