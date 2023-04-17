@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:inhaler_mobile/screens/branding_screen.dart';
-import 'package:inhaler_mobile/screens/splash_screen.dart';
+// import 'package:inhaler_mobile/screens/branding_screen.dart';
+// import 'package:inhaler_mobile/screens/splash_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -26,8 +27,8 @@ class MyApp extends StatelessWidget {
           primaryColor: Color.fromRGBO(1, 156, 220, 1),
           primarySwatch: Colors.blue,
           //accentColor: Color.fromRGBO(217, 125, 84, 1),
-          accentColor: Colors.blue.withOpacity(0.8)),
-      home: SplashScreen(),
+          secondaryHeaderColor: Colors.blue.withOpacity(0.8)),
+      home: BrandingScreen(),
     );
   }
 }
