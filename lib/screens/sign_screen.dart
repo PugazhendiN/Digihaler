@@ -9,7 +9,7 @@ import 'package:inhaler_mobile/screens/home_bucket.dart';
 // import 'package:inhaler_mobile/screens/home_screen.dart';
 
 class SignScreen extends StatefulWidget {
-  const SignScreen() : super();
+  const SignScreen({Key? key}) : super(key: key);
 
   @override
   _SignScreenState createState() => _SignScreenState();
@@ -17,12 +17,12 @@ class SignScreen extends StatefulWidget {
 
 class _SignScreenState extends State<SignScreen> {
   SignStateType signState = SignStateType.signin;
-  double heightYOffset;
-  double heightOthers;
-  double registerHeightYOffset;
-  double heightSize;
-  double imageMarginTopSize;
-  double widthSize;
+  late double heightYOffset;
+  late double heightOthers;
+  late double registerHeightYOffset;
+  late double heightSize;
+  late double imageMarginTopSize;
+  late double widthSize;
   bool _keyBoardVisible = false;
 
   @override
@@ -144,6 +144,8 @@ class _SignScreenState extends State<SignScreen> {
                         height: 15,
                       ),
                       InputWithIcon(
+                        color: Colors.blue,
+                        radius: 2,
                         icon: Icons.email,
                         hintText: 'Enter your email',
                       ),
@@ -151,6 +153,8 @@ class _SignScreenState extends State<SignScreen> {
                         height: 10,
                       ),
                       InputWithIcon(
+                        color: Colors.blue,
+                        radius: 2,
                         icon: Icons.security,
                         hintText: 'Enter your password',
                       ),
@@ -158,6 +162,10 @@ class _SignScreenState extends State<SignScreen> {
                         height: 10,
                       ),
                       CustomButton(
+                        width: 100,
+                        textSize: 20,
+                        textColor: Colors.black,
+                        color: Colors.blue,
                         height: 40,
                         text: 'Login',
                         onTap: () {
@@ -196,11 +204,15 @@ class _SignScreenState extends State<SignScreen> {
                         text: 'Sign in with OTP',
                         icon: Icons.phone,
                         onPressed: () {},
-                        backgroundColor: Colors.blueGrey[700],
+                        backgroundColor: Colors.blue,
                       )
                     ],
                   ),
                   CustomButton(
+                      textSize: 14,
+                      textColor: Colors.black,
+                      color: Colors.blue,
+                      width: 139,
                       height: 40,
                       text: 'Create New Account',
                       onTap: () {
@@ -266,6 +278,8 @@ class _SignScreenState extends State<SignScreen> {
                         height: 15,
                       ),
                       InputWithIcon(
+                        color: Colors.blue,
+                        radius: 2,
                         icon: Icons.email,
                         hintText: 'Enter your email',
                       ),
@@ -273,6 +287,8 @@ class _SignScreenState extends State<SignScreen> {
                         height: 5,
                       ),
                       InputWithIcon(
+                        color: Colors.blue,
+                        radius: 2,
                         icon: Icons.security,
                         hintText: 'Enter your password',
                       ),
@@ -280,6 +296,11 @@ class _SignScreenState extends State<SignScreen> {
                         height: 10,
                       ),
                       CustomButton(
+                        onTap: () {},
+                        textSize: 10,
+                        textColor: Colors.black,
+                        width: 70,
+                        color: Colors.blue,
                         height: 40,
                         text: 'Create',
                       )
@@ -312,12 +333,14 @@ class _SignScreenState extends State<SignScreen> {
                         text: 'Sign in with OTP',
                         icon: Icons.phone,
                         onPressed: () {},
-                        backgroundColor: Colors.blueGrey[700],
+                        backgroundColor: Colors.blue,
                       ),
                       SizedBox(
                         height: 10,
                       ),
                       CustomButton(
+                          textColor: Colors.black,
+                          color: Colors.blue,
                           height: 20,
                           width: 150,
                           textSize: 12,

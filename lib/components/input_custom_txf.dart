@@ -5,7 +5,11 @@ class InputWithIcon extends StatefulWidget {
   final IconData icon;
   final double radius;
   final Color color;
-  const InputWithIcon({this.hintText, this.icon, this.radius, this.color})
+  const InputWithIcon(
+      {required this.hintText,
+      required this.icon,
+      required this.radius,
+      required this.color})
       : super();
 
   @override

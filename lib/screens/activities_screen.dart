@@ -4,14 +4,14 @@ import 'package:flutter_calendar_carousel/flutter_calendar_carousel.dart';
 import '../custom_colors.dart';
 
 class ActivitiesScreen extends StatefulWidget {
-  const ActivitiesScreen() : super();
+  const ActivitiesScreen({Key? key}) : super(key: key);
 
   @override
   _ActivitiesScreenState createState() => _ActivitiesScreenState();
 }
 
 class _ActivitiesScreenState extends State<ActivitiesScreen> {
-  DateTime _currentDate;
+  DateTime _currentDate = DateTime.now();
   @override
   Widget build(BuildContext context) {
     return Scaffold(

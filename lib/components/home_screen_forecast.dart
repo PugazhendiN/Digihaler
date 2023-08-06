@@ -45,6 +45,8 @@ class _HomeScreenForecastState extends State<HomeScreenForecast> {
                       Container(
                         width: MediaQuery.of(context).size.width * 0.70,
                         child: InputWithIcon(
+                          radius: 2,
+                          icon: IconData(1),
                           color: Color(CustomColors.pinkDark),
                           hintText: 'Enter city name',
                         ),
@@ -54,6 +56,10 @@ class _HomeScreenForecastState extends State<HomeScreenForecast> {
                       ),
                       Expanded(
                           child: CustomButton(
+                        textSize: 14,
+                        textColor: Colors.black,
+                        color: Colors.blue,
+                        width: 50,
                         height: 40,
                         text: 'Go',
                         onTap: () {},

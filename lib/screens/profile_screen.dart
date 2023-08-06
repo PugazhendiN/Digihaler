@@ -4,7 +4,7 @@ import 'package:inhaler_mobile/components/custom_button.dart';
 import '../custom_colors.dart';
 
 class ProfileScreen extends StatefulWidget {
-  const ProfileScreen() : super();
+  const ProfileScreen({Key? key}) : super(key: key);
 
   @override
   _ProfileScreenState createState() => _ProfileScreenState();
@@ -98,6 +98,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         CustomButton(
+                          onTap: () {},
+                          textColor: Colors.black,
                           text: 'Edit profile',
                           height: 30,
                           textSize: 14,
@@ -105,6 +107,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           color: Color(CustomColors.grey),
                         ),
                         CustomButton(
+                          onTap: () {},
+                          textColor: Colors.black,
                           text: 'Logout',
                           height: 30,
                           textSize: 14,

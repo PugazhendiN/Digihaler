@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:inhaler_mobile/components/custom_button.dart';
 import 'package:inhaler_mobile/custom_colors.dart';
+import 'package:inhaler_mobile/screens/home_screen.dart';
 import 'package:inhaler_mobile/screens/sign_screen.dart';
 
 class BrandingScreen extends StatefulWidget {
-  BrandingScreen() : super();
+  BrandingScreen({Key? key}) : super(key: key);
 
   @override
   _BrandingScreenState createState() => _BrandingScreenState();
@@ -23,7 +24,7 @@ class _BrandingScreenState extends State<BrandingScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      backgroundColor: Colors.white,
+      backgroundColor: Color.fromARGB(255, 255, 255, 255),
       body: AnimatedContainer(
           duration: Duration(milliseconds: 1000),
           curve: Curves.fastLinearToSlowEaseIn,
@@ -76,7 +77,7 @@ class _BrandingScreenState extends State<BrandingScreen> {
                             fontWeight: FontWeight.bold),
                       ),
                       SizedBox(
-                        height: 15,
+                        height: 5,
                       ),
                       Divider(
                         height: 2,
@@ -86,25 +87,29 @@ class _BrandingScreenState extends State<BrandingScreen> {
                         endIndent: MediaQuery.of(context).size.width * 0.46,
                       ),
                       SizedBox(
-                        height: 15,
+                        height: 5,
                       ),
                       Text(
                         'Never Forget your medication ever again ...',
                         style: TextStyle(
                             color: Theme.of(context).primaryColor,
                             fontFamily: 'Poppins',
-                            fontSize: 16,
+                            fontSize: 18,
                             fontWeight: FontWeight.w200),
                       ),
                     ]),
               ),
               Container(
                 height:
-                    (MediaQuery.of(context).size.height - BOTTOM_SIZE) * 0.25,
+                    (MediaQuery.of(context).size.height - BOTTOM_SIZE) * 0.2,
                 child: Center(
                     child: Container(
                   child: Center(
                     child: CustomButton(
+                      textSize: 20,
+                      textColor: Colors.black,
+                      color: Colors.blue,
+                      height: 25,
                       onTap: () {
                         Navigator.push(
                             context,

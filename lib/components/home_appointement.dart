@@ -45,6 +45,9 @@ class _HomeAppointementState extends State<HomeAppointement> {
                 )),
             Flexible(
               child: CustomButton(
+                onTap: () {},
+                textColor: Colors.black,
+                color: Colors.blue,
                 text: 'See',
                 textSize: 12,
                 height: 30,

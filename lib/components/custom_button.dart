@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_null_comparison
+
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatefulWidget {
@@ -7,15 +9,15 @@ class CustomButton extends StatefulWidget {
   final Color color;
   final Color textColor;
   final double textSize;
-  final Function onTap;
+  final VoidCallback onTap;
   const CustomButton(
-      {this.height,
-      this.text,
-      this.width,
-      this.color,
-      this.textColor,
-      this.textSize,
-      this.onTap})
+      {required this.height,
+      required this.text,
+      required this.width,
+      required this.color,
+      required this.textColor,
+      required this.textSize,
+      required this.onTap})
       : super();
 
   @override
@@ -26,6 +28,7 @@ class _CustomButtonState extends State<CustomButton> {
   @override
   Widget build(BuildContext context) {
     return InkWell(
+      // onTap: widget.onTap == null ? () {} : widget.onTap,
       onTap: widget.onTap == null ? () {} : widget.onTap,
       child: Container(
         decoration: BoxDecoration(
