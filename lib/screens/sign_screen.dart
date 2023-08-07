@@ -1,11 +1,15 @@
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:inhaler_mobile/components/custom_button.dart';
 import 'package:inhaler_mobile/components/input_custom_txf.dart';
 import 'package:inhaler_mobile/custom_colors.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:inhaler_mobile/enums/sign_state_type.dart';
+import 'package:inhaler_mobile/network.dart';
 import 'package:inhaler_mobile/screens/home_bucket.dart';
+import 'package:http/http.dart' as http;
 // import 'package:inhaler_mobile/screens/home_screen.dart';
 
 class SignScreen extends StatefulWidget {
@@ -16,6 +20,10 @@ class SignScreen extends StatefulWidget {
 }
 
 class _SignScreenState extends State<SignScreen> {
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  final AuthService authService = AuthService();
+
   SignStateType signState = SignStateType.signin;
   late double heightYOffset;
   late double heightOthers;
@@ -41,7 +49,7 @@ class _SignScreenState extends State<SignScreen> {
     widthSize = MediaQuery.of(context).size.width;
     switch (signState) {
       case SignStateType.signin:
-        heightYOffset = _keyBoardVisible ? 20 : heightSize * 0.25;
+        heightYOffset = _keyBoardVisible ? 20 : heightSize * 0.2;
         heightOthers = heightSize - heightYOffset - 30;
         registerHeightYOffset = heightSize;
         imageMarginTopSize = heightSize * 0.09;
@@ -143,23 +151,30 @@ class _SignScreenState extends State<SignScreen> {
                       SizedBox(
                         height: 15,
                       ),
-                      InputWithIcon(
-                        color: Colors.blue,
-                        radius: 2,
-                        icon: Icons.email,
-                        hintText: 'Enter your email',
+                      TextField(
+                        decoration: InputDecoration(
+                          prefixIconColor: Colors.blue,
+                          prefixIcon: const Icon(Icons.email),
+                          border: OutlineInputBorder(),
+                          hintText: 'Enter your email',
+                        ),
+                        controller: _emailController,
                       ),
                       SizedBox(
                         height: 10,
                       ),
-                      InputWithIcon(
-                        color: Colors.blue,
-                        radius: 2,
-                        icon: Icons.security,
-                        hintText: 'Enter your password',
+                      TextField(
+                        decoration: InputDecoration(
+                          prefixIconColor: Colors.blue,
+                          prefixIcon: const Icon(Icons.security),
+                          border: OutlineInputBorder(),
+                          hintText: 'Enter your password',
+                        ),
+                        controller: _passwordController,
                       ),
+
                       SizedBox(
-                        height: 10,
+                        height: 30,
                       ),
                       CustomButton(
                         width: 100,
@@ -168,12 +183,20 @@ class _SignScreenState extends State<SignScreen> {
                         color: Colors.blue,
                         height: 40,
                         text: 'Login',
-                        onTap: () {
+                        onTap: () async {
+                          final email = _emailController.text;
+                          final password = _passwordController.text;
+                          // final email = "bb2@gmail.com";
+                          // final password = "Test@123";
+                          final loggedIn = await authService.login(
+                              email, password);
+                          if(loggedIn) {
                           Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => HomeBucket()));
-                        },
+                          context,
+                          MaterialPageRoute(
+                          builder: (context) => HomeBucket()));
+                          }
+                          }
                       )
                     ],
                   ),
@@ -293,7 +316,7 @@ class _SignScreenState extends State<SignScreen> {
                         hintText: 'Enter your password',
                       ),
                       SizedBox(
-                        height: 10,
+                        height: 20,
                       ),
                       CustomButton(
                         onTap: () {},
