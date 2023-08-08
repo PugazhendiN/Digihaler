@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:inhaler_mobile/screens/activities_screen.dart';
 import 'package:inhaler_mobile/screens/doctors_screen.dart';
 import 'package:inhaler_mobile/screens/home_screen.dart';
-import 'package:inhaler_mobile/screens/profile_screen.dart';
+import 'package:inhaler_mobile/screens/profile/cubit/profile_cubit.dart';
+import 'package:inhaler_mobile/screens/profile/profile_screen.dart';
 import 'package:inhaler_mobile/screens/report_screen.dart';
 
 class HomeBucket extends StatefulWidget {
@@ -17,7 +19,10 @@ class _HomeBucketState extends State<HomeBucket> {
   final List<Widget> screens = [
     ReportScreen(),
     ActivitiesScreen(),
-    ProfileScreen(),
+    BlocProvider(
+      create: (context) => ProfileCubit(),
+      child: ProfileScreen(),
+    ),
     DoctorsScreen(),
     HomeScreen()
   ];
@@ -143,7 +148,10 @@ class _HomeBucketState extends State<HomeBucket> {
                   MaterialButton(
                     onPressed: () {
                       setState(() {
-                        currentScreen = ProfileScreen();
+                        currentScreen = BlocProvider(
+                          create: (context) => ProfileCubit(),
+                          child: ProfileScreen(),
+                        );
                         _currentTab = 4;
                       });
                     },

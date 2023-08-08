@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:inhaler_mobile/components/custom_button.dart';
 import 'package:inhaler_mobile/custom_colors.dart';
 import 'package:inhaler_mobile/screens/home_screen.dart';
-import 'package:inhaler_mobile/screens/sign_screen.dart';
+import 'package:inhaler_mobile/screens/login/cubit/login_cubit.dart';
+import 'package:inhaler_mobile/screens/login/sign_screen.dart';
 
 class BrandingScreen extends StatefulWidget {
   BrandingScreen({Key? key}) : super(key: key);
@@ -111,10 +113,7 @@ class _BrandingScreenState extends State<BrandingScreen> {
                       color: Colors.blue,
                       height: 25,
                       onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => SignScreen()));
+                        Navigator.pushReplacementNamed(context, '/login');
                       },
                       text: 'NEXT',
                       width: 120,
