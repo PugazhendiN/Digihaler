@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:inhaler_mobile/screens/activities_screen.dart';
-import 'package:inhaler_mobile/screens/doctors_screen.dart';
+import 'package:inhaler_mobile/screens/doctor/doctors_screen.dart';
 import 'package:inhaler_mobile/screens/home_screen.dart';
 import 'package:inhaler_mobile/screens/profile/cubit/profile_cubit.dart';
 import 'package:inhaler_mobile/screens/profile/profile_screen.dart';

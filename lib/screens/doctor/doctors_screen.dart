@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../custom_colors.dart';
+import '../../custom_colors.dart';
 
 class DoctorsScreen extends StatefulWidget {
   const DoctorsScreen() : super();

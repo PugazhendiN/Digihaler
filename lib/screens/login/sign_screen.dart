@@ -6,7 +6,6 @@ import 'package:inhaler_mobile/components/input_custom_txf.dart';
 import 'package:inhaler_mobile/custom_colors.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:inhaler_mobile/enums/sign_state_type.dart';
-import 'package:inhaler_mobile/network/auth_service.dart';
 import 'package:inhaler_mobile/screens/home_bucket.dart';
 import 'package:inhaler_mobile/screens/login/cubit/login_cubit.dart';
 // import 'package:inhaler_mobile/screens/home_screen.dart';
@@ -64,8 +63,8 @@ class _SignScreenState extends State<SignScreen> {
     return BlocConsumer<LoginCubit, LoginState>(
       listener: (context, state) {
         if (state is LoginSuccess) {
-          Navigator.of(context)
-              .push(MaterialPageRoute(builder: (context) => HomeBucket()));
+          Navigator.of(context).pushReplacement(
+              MaterialPageRoute(builder: (context) => HomeBucket()));
         }
       },
       builder: (context, state) {
@@ -84,13 +83,13 @@ class _SignScreenState extends State<SignScreen> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Image(
-                      width: widthSize * 0.25,
-                      height: widthSize * 0.25,
+                      width: widthSize * 0.2,
+                      height: widthSize * 0.2,
                       fit: BoxFit.cover,
                       image: AssetImage('assets/arcapis.PNG'),
                     ),
                     SizedBox(
-                      height: 5,
+                      height: 2,
                     ),
                     Text(
                       'Never Forget your medication ever again ...',
@@ -165,6 +164,7 @@ class _SignScreenState extends State<SignScreen> {
                               prefixIcon: const Icon(Icons.email),
                               border: OutlineInputBorder(),
                               hintText: 'Enter your email',
+                              hintStyle: TextStyle(color: Colors.white),
                             ),
                             controller: _emailController,
                           ),
@@ -177,6 +177,7 @@ class _SignScreenState extends State<SignScreen> {
                               prefixIcon: const Icon(Icons.security),
                               border: OutlineInputBorder(),
                               hintText: 'Enter your password',
+                              hintStyle: TextStyle(color: Colors.white),
                             ),
                             controller: _passwordController,
                           ),

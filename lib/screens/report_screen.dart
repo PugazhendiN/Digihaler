@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:inhaler_mobile/network/user_service.dart';
 
 import '../custom_colors.dart';
 
